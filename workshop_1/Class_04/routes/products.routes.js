@@ -10,7 +10,7 @@ const productController = new ProductsController();
 productRouter.get("/", async (req, res) => {
     if(req.query.name) {
         const name = req.query.name;
-        const findProductsByName =await productController.searchProduct(name);
+        const findProductsByName = await productController.searchProduct(name);
         res.send(findProductsByName)
     } else {
         const products = await productController.getAllProducts();

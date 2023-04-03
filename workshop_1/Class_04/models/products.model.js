@@ -1,13 +1,13 @@
 import mongoose from "mongoose";
 
-import productSchema from "../mongo_schemas/review.schema.js";
+import productSchema from "../mongo_schemas/product.schema.js";
 
 class ProductModel {
     mongo_model;
 
  
     constructor(){
-        this.mongo_model = mongoose.model("Product", productSchema) 
+        this.mongo_model = mongoose.model("product", productSchema) 
     }
 
 
@@ -50,8 +50,8 @@ class ProductModel {
     }
 
     async searchProduct(name){
-        console.log(name)
-        await this.mongo_model.find({name})
+        const findProductsByName = await this.mongo_model.find({name})
+        return findProductsByName;
     }
     
 };

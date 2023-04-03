@@ -28,7 +28,8 @@ class ProductsController {
     }
 
     async searchProduct(name){
-        await productModel.searchProduct(name)
+        const findProductsByName = await productModel.searchProduct(name)
+        return findProductsByName;
     }
 
 };
